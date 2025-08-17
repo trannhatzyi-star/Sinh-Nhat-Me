@@ -23,6 +23,7 @@ function openModal(type) {
         modalBody.innerHTML = `
             <h2>Video Chúc Mừng</h2>
             <video width="100%" controls>
+        
                 <source src="videos/video-chuc-mung.mp4" type="video/mp4">
             </video>
         `;
@@ -31,7 +32,7 @@ function openModal(type) {
             <h2>Lời Chúc Từ Gia Đình</h2>
             <ul>
                 
-                <li>Bố: "Chúc Tuấn chúc mẹ luôn mạnh khỏe bên gia chồng và các con!"</li>
+                <li>Bố: "Bố Tuấn chúc mẹ luôn mạnh khỏe bên gia chồng và các con!"</li>
                 <li>Em: "Chúc mẹ xinh đẹp dễ thương tuổi mới tràn trề năng lượng!"</li>
                 <li>Con Trai:"Chúc mẹ sinh nhật vui vẻ trẻ khỏe?!"</li>
                             </ul>
