@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Sinh Nhật Mẹ Yêu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@400&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Nền trang với hình hoa -->
+    <div class="background"></div>
+
+    <!-- Tiêu đề chào mừng -->
+    <header>
+        <h1>Chúc Mừng Sinh Nhật Mẹ!</h1>
+        <p>Mẹ yêu dấu, con chúc mẹ luôn mạnh khỏe và hạnh phúc.</p>
+    </header>
+
+    <!-- Menu tương tác dạng quyển sách -->
+    <nav class="book-menu">
+        <div class="book">
+            <div class="page left">
+                <div class="menu-item" onclick="openModal('thiep')">Tấm Thiệp</div>
+                <div class="menu-item" onclick="openModal('album')">Album</div>
+            </div>
+            <div class="page right">
+                <div class="menu-item" onclick="openModal('video')">Video</div>
+                <div class="menu-item" onclick="openModal('loi-chuc')">Lời Chúc</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal (hộp thoại bật lên) cho các nội dung -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Nhạc nền (tự động phát) -->
+    <audio id="background-music" loop autoplay>
+        <source src="audio/nhac-nen.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Hiệu ứng hoa rơi -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        window.onload = function() {
+            // Hiệu ứng pháo hoa nền loop
+            setInterval(function() {
+                confetti({
+                    particleCount: 5,
+                    spread: 100,
+                    origin: { y: 1 },
+                    ticks: 300, // Làm chậm để động nhẹ nhàng
+                    gravity: 0.5,
+                    colors: ['#ff69b4', '#ffd700', '#fff0f5']
+                });
+            }, 1000); // Mỗi giây bắn ít pháo hoa
+
+            // Animation mở sách
+            document.querySelector('.page.left').classList.add('open');
+            document.querySelector('.page.right').classList.add('open');
+        };
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
